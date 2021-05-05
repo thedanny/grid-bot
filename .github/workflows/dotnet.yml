@@ -16,12 +16,16 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 3.1.x
     - name: Restore dependencies
       run: | 
-        cd src/GridBot/
+        cd ./src/GridBot/
         dotnet restore GridBot.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: |
+        cd ./src/GridBot/ 
+        dotnet build GridBot.sln --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: |
+        cd ./src/GridBot/GridBot.Tests
+        dotnet test GridBot.Tests.csproj --no-build --verbosity normal
