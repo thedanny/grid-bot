@@ -19,4 +19,22 @@
       <ProjectReference Include="..\GridBot.Core\GridBot.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="ChartData\bnbusdt-1m-klines.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="ChartData\bnbusdt-5m-klines.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="ChartData\dogeusdt-1m-klines.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="ChartData\dogeusdt-5m-klines.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="ChartData\dogeusdt-5m-klines-small.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

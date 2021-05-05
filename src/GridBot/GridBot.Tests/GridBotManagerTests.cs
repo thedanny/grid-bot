@@ -31,7 +31,7 @@ namespace GridBot.Tests
 			
 			var prices = LoadSamplePrices();
 			
-			foreach (var i in prices.Take(500))
+			foreach (var i in prices)
 			{
 				Task.Delay(100).Wait();
 				priceFeed.Tell(new BroadcastPrice(tradingPair,i));
@@ -68,9 +68,9 @@ namespace GridBot.Tests
 		private static decimal[] LoadSamplePrices()
 		{
 			var sample = JsonConvert.DeserializeObject<decimal[][]>(File.ReadAllText(
-					//@"C:\Data\Experiments\grid-bot\src\GridBot\GridBot.Tests\ChartData\bnbusdt-1m-klines.json"
-					@"C:\Data\Experiments\grid-bot\src\GridBot\GridBot.Tests\ChartData\dogeusdt-5m-klines.json"
-					))
+					//@"./ChartData/bnbusdt-1m-klines.json"
+					@"./ChartData/dogeusdt-5m-klines-small.json"
+				))
 				.Select(a => a[1]).ToArray();
 			return sample;
 		}
